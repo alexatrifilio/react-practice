@@ -1,0 +1,1 @@
+export { Inhabitants } from './Inhabitants'
