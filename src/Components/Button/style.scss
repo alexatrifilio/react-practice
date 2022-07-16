@@ -1,0 +1,15 @@
+.btn{
+    border: 0.5px solid rgb(136, 30, 65);
+    background-color: antiquewhite;
+    border-radius: 50px;
+    color: rgb(136, 30, 65);
+    padding: 5px 10px;
+    width: 100px;
+    
+    &.asleep{
+        background-color: rgb(123, 98, 233);
+        color: rgb(14, 3, 54);
+        border: 0.5px solid rgb(196, 183, 243);
+    }
+
+}

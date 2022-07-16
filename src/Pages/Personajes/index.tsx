@@ -10,18 +10,15 @@ const Personajes: FC = () => {
     return (
         <div className='page personajes'>
             {
-                Inhabitants.map(inhabitant => {
+                Inhabitants.map(({name, id, age, thumbnail})=> {
 
                     return(
-                    <Card key={inhabitant.id}>
-                        <div className='header'>
-                            <h2>{inhabitant.name}</h2>
-                        </div>
+                    <Card key={id} title={name}>
 
-                        <div className='body'>
-                            age: {inhabitant.age}
-                            <img src={inhabitant.thumbnail} alt="" />
-                        </div>
+
+                            age: {age}
+                            <img src={thumbnail} alt="" />
+                       
                     </Card>
                     )
                 })

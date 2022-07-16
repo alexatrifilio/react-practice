@@ -1,4 +1,5 @@
-import  {   FC, ReactNode } from 'react';
+import  {   FC, ReactNode, useState } from 'react';
+import { Button } from '../Button';
 import './style.scss'
 
 type Props = {
@@ -8,12 +9,25 @@ type Props = {
 }
 
 
-const Card:FC<Props> = ({children}) =>{
-    return (
-        <div className='card'>
+const Card:FC<Props> = ({title, children}) =>{
 
+    const [isAsleep, setIsAsleep] = useState(false);
+
+    return (
+        <div className={`card ${isAsleep ? 'asleep' : ''}`}>
+            {title && (
+                <div className='card-header'>
+                   <h2> {title} </h2> 
+                </div>
+            )}
+        <div className='card-body'>
             {children}
         </div>
+        <div className='card-footer'>
+                <Button onClick={() => { setIsAsleep(prevState => !prevState)}} text={isAsleep === true ? 'Wake up' : 'Go to sleep'} className={`btn ${isAsleep ? 'asleep' : ''}`}></Button>
+        </div>
+        </div>
+
     )
 }
 
